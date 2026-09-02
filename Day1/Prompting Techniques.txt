@@ -1,0 +1,64 @@
+Lab session
+
+A user should be able to search for flights by entering From City, To City, Departure Date, number of passengers, and travel class. The system should display available flights and allow the user to select one.
+
+
+Task for trainees:
+
+Write an effective prompt for an AI tool that will generate automation test cases for this requirement.
+--------------------------------------------------------------------------------------------------------------------------
+STRUCTURED PROMPT
+role: Act as a QA automation engineer.
+context: We are testing the search function of an online flight booking service.
+instruction: Generate test cases for this requirement
+input data: user enters field data for From city, To City, Departure Date, number of passengers and travel class
+constraints: allow uppercase/lowercase data for text fields and numeric/date data for appropriate fields, exclude performance testing.
+output: the testcases should follow proper tabular template with Test Case ID, Scenario, Steps, Test Data and Expected Result.
+--------------------------------------------------------------------------------------------------------------------------
+ZERO-SHOT PROMPT
+Act as a QA automation engineer. Generate test cases for the following requirement: 
+A user should be able to search for flights by entering the From city, To City, Departure Date, number of passengers and travel class. 
+The system should display available flights and allow the user to select one.
+--------------------------------------------------------------------------------------------------------------------------
+ONE-SHOT PROMPT
+Act as a QA automation engineer. Generate test cases for the following requirement: A user should be able to search for flights by entering the From city, To City, Departure Date, number of passengers and travel class. The system should display available flights and allow the user to select one. Follow exact format as given in the example below:
+
+Scenario 	  Test Case ID  	Test Steps	 	Expected Result
+---------------------------------------------------------------------------------------
+User enters all    TC001	 1. User enters From City,      Page is redirected to
+valid inputs                        To City, Departure Date,    search results and
+as per field                        no. of passengers and       user is able to click 
+requirement                         travel class                and select one option.
+                                 2. User clicks the search
+				    button
+
+---------------------------------------------------------------------------------------------------------------------------
+FEW-SHOT PROMPT
+Act as a QA automation engineer. Generate test cases for the following requirement: A user should be able to search for flights by entering the From city, To City, Departure Date, number of passengers and travel class. The system should display available flights and allow the user to select one. Follow exact format as given in the example below:
+
+Scenario 	  Test Case ID  	Test Steps	 	Expected Result
+---------------------------------------------------------------------------------------
+1.User enters all    TC001	 1. User enters From City,      Page is redirected to
+valid inputs                        To City, Departure Date,    search results and
+as per field                        no. of passengers and       user is able to click 
+requirement                         travel class                and select one option.
+                                 2. User clicks the search
+				    button
+----------------------------------------------------------------------------------------                                   
+2.User enters some   TC002	 1. User enters From City,      Field warning text
+invalid inputs                      To City, Departure Date,    appears demanding the
+as per field                        no. of passengers and       correct data format 
+requirement                         travel class                and does not enable
+                                 2. User clicks the search      Search-button unless 
+				    button                      valid data is entered
+----------------------------------------------------------------------------------------
+
+
+SELF-CONSISTENCY PROMPTING
+Act as a QA automation engineer. Generate test cases for the following requirement: A user should be able to search for flights by entering the From city, To City, Departure Date, number of passengers and travel class. The system should display available flights and allow the user to select one. Consider multiple pathways:
+
+1. Identify different scenarios first and then create RTM and then test cases
+2. Directly generate test cases in tabular format and link it to an appropriate scenario by mentioning it in an additional column
+3. Follow Gherkin syntax for both positive and negative user journeys.
+
+Pick the most optimal choice and provide reasoning for your choice of approach.
