@@ -1,0 +1,2 @@
+username,password,fromAccount,toAccount,transferType,transferAmount
+apex_user,Password123!,Checking ($4250),Savings ($18400),Between My Accounts,100
